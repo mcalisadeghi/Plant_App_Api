@@ -4,7 +4,8 @@ import 'package:flutter_application_1/constants/constants.dart';
 import 'package:flutter_application_1/ui/cart/cart_page.dart';
 import 'package:flutter_application_1/ui/catalog/catalog.dart';
 import 'package:flutter_application_1/ui/home/home_page.dart';
-import 'package:page_transition/page_transition.dart';
+import 'package:flutter_application_1/ui/profile/profile_page.dart';
+// import 'package:page_transition/page_transition.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});
@@ -16,15 +17,15 @@ class RootPage extends StatefulWidget {
 class _RootPageState extends State<RootPage> {
   int bottomIndex = 0;
 
-  List<Plant> favorites = [];
-  List<Plant> myCart = [];
+  // List<Plant> favorites = [];
+  // List<Plant> myCart = [];
 
   List<Widget> page() {
     return [
       const HomePage(),
-      CatalogPage(),
+      const CatalogPage(),
       // FavoritePage(favoritedPlants: favorites),
-      CartPage(), //addedToCartPlants: myCart
+      const CartPage(), //addedToCartPlants: myCart
       const ProfilePage(),
     ];
   }
@@ -77,13 +78,13 @@ class _RootPageState extends State<RootPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            PageTransition(
-              child: const ScanPage(),
-              type: PageTransitionType.bottomToTop,
-            ),
-          );
+          // Navigator.push(
+          //   context,
+          //   // PageTransition(
+          //   //   child: const ScanPage(),
+          //   //   type: PageTransitionType.bottomToTop,
+          //   // ),
+          // );
         },
         backgroundColor: Constants.primaryColor,
         child: Image.asset(
@@ -105,11 +106,11 @@ class _RootPageState extends State<RootPage> {
             () {
               bottomIndex = index;
 
-              final List<Plant> favoritedPlants = Plant.getFavoritedPlants();
-              final List<Plant> addedToCartPlants = Plant.addedToCartPlants();
+              // final List<Plant> favoritedPlants = Plant.getFavoritedPlants();
+              // final List<Plant> addedToCartPlants = Plant.addedToCartPlants();
 
-              favorites = favoritedPlants.toSet().toList();
-              myCart = addedToCartPlants.toSet().toList();
+              // favorites = favoritedPlants.toSet().toList();
+              // myCart = addedToCartPlants.toSet().toList();
             },
           );
         },
