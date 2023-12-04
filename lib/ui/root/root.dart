@@ -1,6 +1,8 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/constants.dart';
+import 'package:flutter_application_1/ui/catalog/catalog.dart';
+import 'package:flutter_application_1/ui/home/home_page.dart';
 import 'package:page_transition/page_transition.dart';
 
 class RootPage extends StatefulWidget {
@@ -19,7 +21,8 @@ class _RootPageState extends State<RootPage> {
   List<Widget> page() {
     return [
       const HomePage(),
-      FavoritePage(favoritedPlants: favorites),
+      CatalogPage(),
+      // FavoritePage(favoritedPlants: favorites),
       CartPage(addedToCartPlants: myCart),
       const ProfilePage(),
     ];
