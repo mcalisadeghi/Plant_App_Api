@@ -17,3 +17,13 @@ class Constants {
   static String descriptionThree =
       "هر گلی نیاز داشته باشید در این اپلیکیشن پیدا میکنید";
 }
+
+class WoocommerceInfo {
+//  consuumerky & consumersecret
+  static String consumerKey = '';
+  static String consumerSecret = '';
+  // BASE URL  WOOCOMMERCE
+  static String baseUrlWooCommerce = 'wp-json/wc/v3';
+  // API ENDPOINTS
+  static String customerURL = 'customers';
+}
