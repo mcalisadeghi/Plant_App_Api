@@ -30,11 +30,28 @@ class _SingnupPageState extends State<SingnupPage> {
                       50.0,
                     ),
                     color: Constants.primaryColor.withOpacity(
-                      015.0,
+                      0.15,
                     ),
                   ),
                   child: Icon(
                     Icons.close,
+                    color: Constants.primaryColor,
+                  ),
+                ),
+                Container(
+                  height: 40.0,
+                  width: 40.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      50.0,
+                    ),
+                    color: Constants.primaryColor.withOpacity(
+                      0.15,
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.close,
+                    color: Constants.primaryColor,
                   ),
                 ),
               ],
