@@ -267,6 +267,32 @@ class _SingnupPageState extends State<SingnupPage> {
                               debugPrint(
                                 '${customerModel.toJson()}',
                               );
+                              apiService.createCustomer(customerModel).then(
+                                (retRes) {
+                                  if (retRes) {
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            title: Text(
+                                              'Woocommerce app',
+                                            ),
+                                            content: Text(
+                                              'RegisTration uccessfull',
+                                            ),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        });
+                                  }
+                                },
+                              );
                             },
                             child: const Text(
                               'ثبت نام',
