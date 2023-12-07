@@ -226,6 +226,13 @@ class _SingnupPageState extends State<SingnupPage> {
                       Row(
                         children: [
                           ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Constants.primaryColor,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 30.0,
+                                vertical: 10.0,
+                              ),
+                            ),
                             onPressed: () {},
                             child: const Text(
                               'ثبت نام',
@@ -238,6 +245,13 @@ class _SingnupPageState extends State<SingnupPage> {
                             width: 20.0,
                           ),
                           ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Constants.primaryColor,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 30.0,
+                                vertical: 10.0,
+                              ),
+                            ),
                             onPressed: () {},
                             child: const Text(
                               'قبلا اکانت ساختی؟',
