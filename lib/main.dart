@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/ui/root/root.dart';
+import 'package:flutter_application_1/ui/signup/signup_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Planet App',
-      home: RootPage(),
+      // home: RootPage(),
+      home: SingnupPage(),
     );
   }
 }
