@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/api/api_service.dart';
 import 'package:flutter_application_1/constants/constants.dart';
+import 'package:flutter_application_1/models/woocomers/resister_model.dart';
 
 class SingnupPage extends StatefulWidget {
   const SingnupPage({super.key});
@@ -9,6 +11,16 @@ class SingnupPage extends StatefulWidget {
 }
 
 class _SingnupPageState extends State<SingnupPage> {
+  late APIService apiService;
+  late CustomerModel customerModel;
+  bool isApiCalled = false;
+  @override
+  void initState() {
+    apiService = APIService();
+    customerModel = CustomerModel();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -74,6 +86,10 @@ class _SingnupPageState extends State<SingnupPage> {
                       Directionality(
                         textDirection: TextDirection.rtl,
                         child: TextFormField(
+                          initialValue: customerModel.firsName,
+                          onChanged: (value) {
+                            customerModel.firsName = value;
+                          },
                           cursorColor: Constants.primaryColor,
                           style: const TextStyle(
                             fontSize: 20.0,
@@ -112,6 +128,10 @@ class _SingnupPageState extends State<SingnupPage> {
                       Directionality(
                         textDirection: TextDirection.rtl,
                         child: TextFormField(
+                          initialValue: customerModel.firsName,
+                          onChanged: (value) {
+                            customerModel.firsName = value;
+                          },
                           cursorColor: Constants.primaryColor,
                           style: const TextStyle(
                             fontSize: 20.0,
@@ -150,11 +170,16 @@ class _SingnupPageState extends State<SingnupPage> {
                       Directionality(
                         textDirection: TextDirection.rtl,
                         child: TextFormField(
+                          initialValue: customerModel.firsName,
+                          onChanged: (value) {
+                            customerModel.firsName = value;
+                          },
                           cursorColor: Constants.primaryColor,
                           style: const TextStyle(
                             fontSize: 20.0,
                             height: 2.0,
                           ),
+                          textDirection: TextDirection.ltr,
                           decoration: InputDecoration(
                             hintTextDirection: TextDirection.rtl,
                             focusedBorder: OutlineInputBorder(
@@ -188,6 +213,11 @@ class _SingnupPageState extends State<SingnupPage> {
                       Directionality(
                         textDirection: TextDirection.rtl,
                         child: TextFormField(
+                          initialValue: customerModel.firsName,
+                          onChanged: (value) {
+                            customerModel.firsName = value;
+                          },
+                          textDirection: TextDirection.ltr,
                           cursorColor: Constants.primaryColor,
                           style: const TextStyle(
                             fontSize: 20.0,
@@ -228,12 +258,16 @@ class _SingnupPageState extends State<SingnupPage> {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Constants.primaryColor,
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                 horizontal: 30.0,
                                 vertical: 10.0,
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              debugPrint(
+                                '${customerModel.toJson()}',
+                              );
+                            },
                             child: const Text(
                               'ثبت نام',
                               style: TextStyle(
@@ -247,7 +281,7 @@ class _SingnupPageState extends State<SingnupPage> {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Constants.primaryColor,
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                 horizontal: 30.0,
                                 vertical: 10.0,
                               ),

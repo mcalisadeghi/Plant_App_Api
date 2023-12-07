@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/ui/root/root.dart';
+// import 'package:flutter_application_1/ui/root/root.dart';
 import 'package:flutter_application_1/ui/signup/signup_page.dart';
 
 void main() {
