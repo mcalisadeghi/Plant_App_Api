@@ -6,20 +6,20 @@ class CustomFormField extends StatelessWidget {
   final Object? initialValue;
   final Function(String)? onChanged;
   final TextDirection textDirection;
-  final String lastNme;
+  final String lastName;
   const CustomFormField({
     super.key,
-    this.validator,
-    this.initialValue,
-    this.onChanged,
+    required this.validator,
+    required this.initialValue,
+    required this.onChanged,
     required this.textDirection,
-    required this.lastNme,
+    required this.lastName,
   });
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: textDirection,
       child: TextFormField(
         initialValue: initialValue != null ? initialValue.toString() : '',
         onChanged: onChanged,
@@ -46,7 +46,7 @@ class CustomFormField extends StatelessWidget {
             vertical: 15.0,
           ),
           label: Text(
-            'نام',
+            lastName,
             style: TextStyle(
               fontSize: 20.0,
               color: Constants.primaryColor,

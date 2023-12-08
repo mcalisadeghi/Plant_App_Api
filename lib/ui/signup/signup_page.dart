@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_application_1/api/api_service.dart';
 import 'package:flutter_application_1/constants/constants.dart';
 import 'package:flutter_application_1/models/woocomers/resister_model.dart';
+import 'package:flutter_application_1/ui/signup/custom_form_field.dart';
 
 class SingnupPage extends StatefulWidget {
   const SingnupPage({super.key});
@@ -87,199 +88,70 @@ class _SingnupPageState extends State<SingnupPage> {
                     ),
                     child: Column(
                       children: [
-                        Directionality(
+                        CustomFormField(
+                          validator: (String? value) {
+                            if (value.toString().isEmpty) {
+                              return 'این فرم باید پر شورد';
+                            }
+                            return null;
+                          },
+                          initialValue: customerModel.firsName,
+                          onChanged: (String value) {
+                            customerModel.firsName = value;
+                          },
                           textDirection: TextDirection.rtl,
-                          child: TextFormField(
-                            initialValue: customerModel.firsName,
-                            onChanged: (String value) {
-                              customerModel.firsName = value;
-                            },
-                            cursorColor: Constants.primaryColor,
-                            style: const TextStyle(
-                              fontSize: 20.0,
-                              height: 2.0,
-                            ),
-                            decoration: InputDecoration(
-                              hintTextDirection: TextDirection.rtl,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Constants.primaryColor,
-                                  width: 1.0,
-                                ),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(
-                                  5.0,
-                                ),
-                              ),
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 15.0,
-                                vertical: 15.0,
-                              ),
-                              label: Text(
-                                'نام',
-                                style: TextStyle(
-                                  fontSize: 20.0,
-                                  color: Constants.primaryColor,
-                                ),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value.toString().isEmpty) {
-                                return 'این فرم باید پر شورد';
-                              }
-                              return null;
-                            },
-                          ),
+                          lastName: 'نام',
                         ),
                         const SizedBox(
                           height: 30.0,
                         ),
-                        Directionality(
+                        CustomFormField(
+                          validator: (String? value) {
+                            if (value.toString().isEmpty) {
+                              return 'این فرم باید پر شورد';
+                            }
+                            return null;
+                          },
+                          initialValue: customerModel.firsName,
+                          onChanged: (String value) {
+                            customerModel.firsName = value;
+                          },
                           textDirection: TextDirection.rtl,
-                          child: TextFormField(
-                            initialValue: customerModel.lastName,
-                            onChanged: (value) {
-                              customerModel.lastName = value;
-                            },
-                            cursorColor: Constants.primaryColor,
-                            style: const TextStyle(
-                              fontSize: 20.0,
-                              height: 2.0,
-                            ),
-                            decoration: InputDecoration(
-                              hintTextDirection: TextDirection.rtl,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Constants.primaryColor,
-                                  width: 1.0,
-                                ),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(
-                                  5.0,
-                                ),
-                              ),
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 15.0,
-                                vertical: 15.0,
-                              ),
-                              label: Text(
-                                'نام خانوادگی',
-                                style: TextStyle(
-                                  fontSize: 20.0,
-                                  color: Constants.primaryColor,
-                                ),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value.toString().isEmpty) {
-                                return 'این فرم باید پر شورد';
-                              }
-                              return null;
-                            },
-                          ),
+                          lastName: 'نام خانوادگی',
                         ),
                         const SizedBox(
                           height: 30.0,
                         ),
-                        Directionality(
-                          textDirection: TextDirection.rtl,
-                          child: TextFormField(
-                            keyboardType: TextInputType.emailAddress,
-                            initialValue: customerModel.email,
-                            onChanged: (value) {
-                              customerModel.email = value;
-                            },
-                            cursorColor: Constants.primaryColor,
-                            style: const TextStyle(
-                              fontSize: 20.0,
-                              height: 2.0,
-                            ),
-                            textDirection: TextDirection.ltr,
-                            decoration: InputDecoration(
-                              hintTextDirection: TextDirection.rtl,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Constants.primaryColor,
-                                  width: 1.0,
-                                ),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(
-                                  5.0,
-                                ),
-                              ),
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 15.0,
-                                vertical: 15.0,
-                              ),
-                              label: Text(
-                                'ایمیل',
-                                style: TextStyle(
-                                  fontSize: 20.0,
-                                  color: Constants.primaryColor,
-                                ),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value.toString().isEmpty) {
-                                return 'این فرم باید پر شورد';
-                              }
-                              return null;
-                            },
-                          ),
+                        CustomFormField(
+                          validator: (String? value) {
+                            if (value.toString().isEmpty) {
+                              return 'این فرم باید پر شورد';
+                            }
+                            return null;
+                          },
+                          initialValue: customerModel.firsName,
+                          onChanged: (String value) {
+                            customerModel.firsName = value;
+                          },
+                          textDirection: TextDirection.ltr,
+                          lastName: 'ایمیل',
                         ),
                         const SizedBox(
                           height: 30.0,
                         ),
-                        Directionality(
-                          textDirection: TextDirection.rtl,
-                          child: TextFormField(
-                            keyboardType: TextInputType.visiblePassword,
-                            obscureText: true,
-                            initialValue: customerModel.password,
-                            onChanged: (value) {
-                              customerModel.password = value;
-                            },
-                            textDirection: TextDirection.ltr,
-                            cursorColor: Constants.primaryColor,
-                            style: const TextStyle(
-                              fontSize: 20.0,
-                              height: 2.0,
-                            ),
-                            decoration: InputDecoration(
-                              hintTextDirection: TextDirection.rtl,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Constants.primaryColor,
-                                  width: 1.0,
-                                ),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(
-                                  5.0,
-                                ),
-                              ),
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 15.0,
-                                vertical: 15.0,
-                              ),
-                              label: Text(
-                                'پسورد',
-                                style: TextStyle(
-                                  fontSize: 20.0,
-                                  color: Constants.primaryColor,
-                                ),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value.toString().isEmpty) {
-                                return 'این فرم باید پر شورد';
-                              }
-                              return null;
-                            },
-                          ),
+                        CustomFormField(
+                          validator: (String? value) {
+                            if (value.toString().isEmpty) {
+                              return 'این فرم باید پر شورد';
+                            }
+                            return null;
+                          },
+                          initialValue: customerModel.firsName,
+                          onChanged: (String value) {
+                            customerModel.firsName = value;
+                          },
+                          textDirection: TextDirection.ltr,
+                          lastName: 'پسورد',
                         ),
                         const SizedBox(
                           height: 30.0,
