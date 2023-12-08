@@ -91,7 +91,7 @@ class _SingnupPageState extends State<SingnupPage> {
                           textDirection: TextDirection.rtl,
                           child: TextFormField(
                             initialValue: customerModel.firsName,
-                            onChanged: (value) {
+                            onChanged: (String value) {
                               customerModel.firsName = value;
                             },
                             cursorColor: Constants.primaryColor,
