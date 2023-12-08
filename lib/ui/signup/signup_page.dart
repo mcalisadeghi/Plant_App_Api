@@ -112,9 +112,9 @@ class _SingnupPageState extends State<SingnupPage> {
                             }
                             return null;
                           },
-                          initialValue: customerModel.firsName,
+                          initialValue: customerModel.lastName,
                           onChanged: (String value) {
-                            customerModel.firsName = value;
+                            customerModel.lastName = value;
                           },
                           textDirection: TextDirection.rtl,
                           lastName: 'نام خانوادگی',
@@ -129,9 +129,9 @@ class _SingnupPageState extends State<SingnupPage> {
                             }
                             return null;
                           },
-                          initialValue: customerModel.firsName,
+                          initialValue: customerModel.email,
                           onChanged: (String value) {
-                            customerModel.firsName = value;
+                            customerModel.email = value;
                           },
                           textDirection: TextDirection.ltr,
                           lastName: 'ایمیل',
@@ -146,9 +146,9 @@ class _SingnupPageState extends State<SingnupPage> {
                             }
                             return null;
                           },
-                          initialValue: customerModel.firsName,
+                          initialValue: customerModel.password,
                           onChanged: (String value) {
-                            customerModel.firsName = value;
+                            customerModel.password = value;
                           },
                           textDirection: TextDirection.ltr,
                           lastName: 'پسورد',

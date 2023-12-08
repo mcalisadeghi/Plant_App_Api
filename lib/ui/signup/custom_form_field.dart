@@ -19,7 +19,7 @@ class CustomFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: textDirection,
+      textDirection: TextDirection.rtl,
       child: TextFormField(
         initialValue: initialValue != null ? initialValue.toString() : '',
         onChanged: onChanged,
@@ -28,6 +28,7 @@ class CustomFormField extends StatelessWidget {
           fontSize: 20.0,
           height: 2.0,
         ),
+        textDirection: textDirection,
         decoration: InputDecoration(
           hintTextDirection: TextDirection.rtl,
           focusedBorder: OutlineInputBorder(
