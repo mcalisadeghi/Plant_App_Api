@@ -4,6 +4,7 @@ import 'package:flutter_application_1/api/api_service.dart';
 import 'package:flutter_application_1/constants/constants.dart';
 import 'package:flutter_application_1/models/woocomers/resister_model.dart';
 import 'package:flutter_application_1/ui/signup/custom_form_field.dart';
+import 'package:flutter_application_1/ui/utils/extensions.dart';
 
 class SingnupPage extends StatefulWidget {
   const SingnupPage({super.key});
@@ -127,6 +128,9 @@ class _SingnupPageState extends State<SingnupPage> {
                             if (value.toString().isEmpty) {
                               return 'این فرم باید پر شورد';
                             }
+                            if (!value!.isValidEmail) {
+                              return 'ایمیل صحیح نیست.';
+                            }
                             return null;
                           },
                           initialValue: customerModel.email,
@@ -143,6 +147,9 @@ class _SingnupPageState extends State<SingnupPage> {
                           validator: (String? value) {
                             if (value.toString().isEmpty) {
                               return 'این فرم باید پر شورد';
+                            }
+                            if (!value!.isValidPassword) {
+                              return 'پسورد قوی انتخاب کنید.';
                             }
                             return null;
                           },
