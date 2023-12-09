@@ -4,6 +4,7 @@ import 'package:flutter_application_1/api/api_service.dart';
 import 'package:flutter_application_1/constants/constants.dart';
 import 'package:flutter_application_1/models/woocomers/resister_model.dart';
 import 'package:flutter_application_1/ui/signup/custom_form_field.dart';
+import 'package:flutter_application_1/ui/utils/custom_dialog_box.dart';
 import 'package:flutter_application_1/ui/utils/extensions.dart';
 
 class SingnupPage extends StatefulWidget {
@@ -191,51 +192,23 @@ class _SingnupPageState extends State<SingnupPage> {
                                         },
                                       );
                                       if (retRes) {
-                                        showDialog(
-                                          context: context,
-                                          builder: (context) {
-                                            return AlertDialog(
-                                              title: Text(
-                                                'Woocommerce app',
-                                              ),
-                                              content: Text(
-                                                'RegisTration uccessfull',
-                                              ),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () {
-                                                    Navigator.of(context).pop();
-                                                  },
-                                                  child: Text(
-                                                    'Ok',
-                                                  ),
-                                                ),
-                                              ],
-                                            );
+                                        CustomDialogBox.showMessage(
+                                          context,
+                                          'ثبت نام موفق',
+                                          'ثبت نام با موفقیت انجام شد.',
+                                          'بستن',
+                                          () {
+                                            Navigator.of(context).pop();
                                           },
                                         );
                                       } else {
-                                        showDialog(
-                                          context: context,
-                                          builder: (context) {
-                                            return AlertDialog(
-                                              title: Text(
-                                                'Woocommerce app',
-                                              ),
-                                              content: Text(
-                                                'Email Alredy Resistered',
-                                              ),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () {
-                                                    Navigator.of(context).pop();
-                                                  },
-                                                  child: Text(
-                                                    'Ok',
-                                                  ),
-                                                ),
-                                              ],
-                                            );
+                                        CustomDialogBox.showMessage(
+                                          context,
+                                          'ثبت نام نا موفق',
+                                          'ثبت نام با موفقیت انجام نشد.',
+                                          'بستن',
+                                          () {
+                                            Navigator.of(context).pop();
                                           },
                                         );
                                       }
