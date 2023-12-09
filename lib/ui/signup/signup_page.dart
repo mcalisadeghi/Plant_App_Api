@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_application_1/api/api_service.dart';
 import 'package:flutter_application_1/constants/constants.dart';
 import 'package:flutter_application_1/models/woocomers/resister_model.dart';
+import 'package:flutter_application_1/ui/app_bar.dart';
 import 'package:flutter_application_1/ui/signup/custom_form_field.dart';
 import 'package:flutter_application_1/ui/utils/custom_dialog_box.dart';
 import 'package:flutter_application_1/ui/utils/extensions.dart';
@@ -36,43 +37,7 @@ class _SingnupPageState extends State<SingnupPage> {
             top: 50.0,
             left: 20.0,
             right: 20.0,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 40.0,
-                  width: 40.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      50.0,
-                    ),
-                    color: Constants.primaryColor.withOpacity(
-                      0.15,
-                    ),
-                  ),
-                  child: Icon(
-                    Icons.close,
-                    color: Constants.primaryColor,
-                  ),
-                ),
-                Container(
-                  height: 40.0,
-                  width: 40.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      50.0,
-                    ),
-                    color: Constants.primaryColor.withOpacity(
-                      0.15,
-                    ),
-                  ),
-                  child: Icon(
-                    Icons.share,
-                    color: Constants.primaryColor,
-                  ),
-                ),
-              ],
-            ),
+            child: AppBarC(),
           ),
           Positioned(
             top: 150.0,
